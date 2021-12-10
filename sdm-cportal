@@ -393,7 +393,7 @@ def runserver(pd):
     for wl in [ 'wlan0', 'wlan1' ]:
         stopifactive(pd, "wpa_supplicant@{}".format(wl), True)
     apon(pd)
-    server_address = ('0.0.0.0', 80)
+    server_address = ('0.0.0.0', 9090)
     handler = partial(sdmRequestHandler, pd)
     httpd = HTTPServer(server_address, handler)
     while not pd.stopflag:
